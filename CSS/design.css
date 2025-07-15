@@ -1,0 +1,162 @@
+/* Reset & Base Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f6f8;
+    color: #333;
+    padding: 20px;
+}
+
+h1 {
+    font-weight: 600;
+    background: #0d6efd;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.container > div {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: 500;
+    margin-bottom: 5px;
+    display: inline-block;
+    color: #444;
+}
+
+input.form-control,
+textarea.form-control {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+input.form-control:focus,
+textarea.form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.2);
+}
+
+/* Buttons */
+button {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 10px 16px !important;
+    font-weight: 500;
+    border-radius: 8px !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+button:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Click animation (pulse) */
+button:active::after {
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255, 0.5);
+    width: 120%;
+    height: 120%;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: pulse 0.5s ease-out;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    pointer-events: none;
+}
+
+@keyframes pulse {
+    to {
+        transform: translate(-50%, -50%) scale(3);
+        opacity: 0;
+    }
+}
+
+/* Table Styling */
+table {
+    margin-top: 30px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+thead.table-dark th,
+thead.table-dark td {
+    background-color: #343a40;
+    color: white;
+}
+
+td, th {
+    vertical-align: middle !important;
+}
+
+/* Image Thumbnails */
+.size {
+    height: 72px;
+    width: 72px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* Icons */
+.hand {
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: #0d6efd;
+    transition: color 0.3s ease;
+}
+
+.hand:hover {
+    color: #0a58ca;
+}
+
+/* Row Highlight on Delete Toggle */
+.alert-danger {
+    background-color: #ffe2e2 !important;
+}
+
+/* Result Count Section */
+#result h2 {
+    font-size: 1.25rem;
+    margin-top: 20px;
+    background-color: #e9ecef;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px #ddd;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+        padding: 10px;
+    }
+
+    .container > div {
+        margin-bottom: 10px;
+    }
+
+    button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .table {
+        font-size: 0.85rem;
+    }
+
+    .size {
+        height: 56px;
+        width: 56px;
+    }
+}
